@@ -1,0 +1,11 @@
+1. have mysql downloaded on your computer
+2. finish installing and all
+3. open mysql workbench
+4. from the menus on the top find SERVER tab (I believe)
+5. click on data import
+6. click on import from self-contained file and find and click on the file you want to import
+7. go to default target schema and check on the schema you want the database stored in
+8. click start import (it might be hidden at the bottom where you would have to make the bottom tab small)
+9. close out on the mysql workbench and reload it to check if the database is there
+10. go to dbconnect.php file and edit the $pass to your password and $db to the schema name you put the database in
+11. run the login.php by using yourname (all undercase) as the username and last time (all undercase) as password to test if working
