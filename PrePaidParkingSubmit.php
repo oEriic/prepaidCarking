@@ -36,14 +36,6 @@
 				$name .= "a";
 			}
 			$timeask .= "<input type = \"submit\" value = \"CONFIRM RENTAL TIME\"/> "; 
-			/*
-			$query4 = "SELECT * FROM PurchasedSpaces"; // gets everything in the table and returns it as a mysqli_result object if SELECT, SHOW, DESCRIBE or EXPLAIN is used, there may be more cases than these where it returns a mysqli_result object.
-			$results = mysqli_query($link,$query4); // restults is the mysqli_result object
-			$row = mysqli_fetch_row($results); // everytime fetch row is used, it returns the next row as array, this returns the first row as array
-			$row2 = mysqli_fetch_row($results); // this returns the second row as array
-			echo "You selected Space " . $row[0] . " for " . $row[1] . " days, " . $row[2] . " hours, and " . $row[3] . "minutes. Cost: $" . $row[4] . "</br>";
-			echo "You selected Space " . $row2[0] . " for " . $row2[1] . " days, " . $row2[2] . " hours, and " . $row2[3] . "minutes. Cost: $" . $row2[4] . "</br>";
-			*/
 		}
 		echo mysqli_get_server_info($link) . "\n"; // returns server infor
 		mysqli_close($link); // closes connection
