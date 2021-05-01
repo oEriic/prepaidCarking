@@ -8,9 +8,9 @@
 			echo "Could not connect to server</br>";
 			trigger_error(mysqli_connect_error(), E_USER_ERROR);
 		} 
-		else{
-			echo "Connection established</br>";
-			$query = "CREATE TABLE PurchasedSpaces(
+		else{			
+			$test = $_POST;
+			$query = "CREATE TABLE PurchasedSpacesFinal(
 			SpaceName VARCHAR(50) PRIMARY KEY,
 			SpaceHours INTEGER,
 			SpacePrice INTEGER
@@ -24,18 +24,18 @@
 				echo "table created</br>";
 			}
 			
-			$test = $_POST;
-			$timeask = "";
-			$name = "a";
+			$query2 = "SELECT * FROM PurchasedSpaces"; // gets everything in the table and returns it as a mysqli_result object if SELECT, SHOW, DESCRIBE or EXPLAIN is used, there may be more cases than these where it returns a mysqli_result object.
+			$results = mysqli_query($link,$query2); // restults is the mysqli_result object
+			$blag = "a";
 			foreach($test as $test2){
-				$query3 = "INSERT INTO PurchasedSpaces (SpaceName)
-						VALUES (" . "\"" . $test2 . "\"" . ");
+				$row = mysqli_fetch_row($results);
+				$query3 = "INSERT INTO PurchasedSpacesFinal (SpaceName,SpaceHours)
+						VALUES (" . "\"" . $row[0] . "\"" . "," . "\"" . $test2 . "\"" . ");
 			";
 				mysqli_query($link,$query3);
-				$timeask .= "<label>Please enter the amount of hours you wish to rent for Space ". $test2 ." <input type = \"text\" name = ". "\"" . $name . "\"" ."> </label> </br> </br>"; 
-				$name .= "a";
+				$blag .= "a";
 			}
-			$timeask .= "<input type = \"submit\" value = \"CONFIRM RENTAL TIME\"/> "; 
+			
 			/*
 			$query4 = "SELECT * FROM PurchasedSpaces"; // gets everything in the table and returns it as a mysqli_result object if SELECT, SHOW, DESCRIBE or EXPLAIN is used, there may be more cases than these where it returns a mysqli_result object.
 			$results = mysqli_query($link,$query4); // restults is the mysqli_result object
@@ -48,17 +48,3 @@
 		echo mysqli_get_server_info($link) . "\n"; // returns server infor
 		mysqli_close($link); // closes connection
 		?>
-<html lang = "en">
-	<head>
-		<meta charset = "UTF-8"/>
-		<title>Rental Period</title>
-		<link rel="stylesheet" href="PrePaidParkingStyles.css">
-	</head>
-	<body>
-		<div>
-			<form action = "PrePaidParkingFinalSubmit.php" method = "POST">
-				<?= $timeask ?>
-			</form>
-		</div>
-	</body>
-<html>
