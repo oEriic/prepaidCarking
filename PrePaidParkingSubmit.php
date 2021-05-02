@@ -24,7 +24,7 @@
 						VALUES (" . "\"" . $test2 . "\"" . ");
 			";
 				mysqli_query($link,$query3);
-				$timeask .= "<label>Please enter the amount of hours you wish to rent for Space ". $test2 ." <input type = \"text\" name = ". "\"" . $name . "\"" ."> </label> </br> </br>"; 
+				$timeask .= "<label>Please enter the amount of hours you want to rent for Space ". $test2 .": <input type = \"text\" name = ". "\"" . $name . "\"" ."> </label> </br> </br>"; 
 				$name .= "a";
 			}
 			$timeask .= "<input type = \"submit\" value = \"CONFIRM RENTAL TIME\"/> "; 

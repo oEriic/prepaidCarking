@@ -8,13 +8,13 @@
 	</head>
 	<body>
 		<div>
-			<h1>Available Parking:</h1>
+			<h2>Regular parking: $12/hour | VIP parking: $24/hour</h2>
 		</div>
 		<div>
 			<h4>(Green spaces are available, grey spaces are unavailable, and blue spaces are already added to your purchase.)</h4>
 		</div>
 		<div>
-			<h2>Regular parking: $12/hour | VIP parking: $24/hour</h2>
+			<h1>Available Regular Parking:</h1>
 		</div>
 		<form action = "PrePaidParkingSubmit.php" method = "POST">
 			<div>
