@@ -11,6 +11,9 @@
 			<h1>Available Parking:</h1>
 		</div>
 		<div>
+			<h4>(Green spaces are available, grey spaces are unavailable, and blue spaces are already added to your purchase.)</h4>
+		</div>
+		<div>
 			<h2>Regular parking: $12/hour | VIP parking: $24/hour</h2>
 		</div>
 		<form action = "PrePaidParkingSubmit.php" method = "POST">
@@ -261,18 +264,69 @@
 				<input type = "submit" value = "CONFIRM SELECTION"/>
 			</div>
 		</form>
-		<script>
-		var parkingspaces = document.getElementsByTagName("td");
-		for(var x = 0; x <= parkingspaces.length-1; x++){
-			var decide = Math.random()*10;
-			if(decide <= 5){
-				parkingspaces[x].style.backgroundColor = "lightgreen";
+		</br>
+		<div>
+			<a href = "homepage.php">Back to homepage</a>
+		</div>
+		<?php
+		$host = "localhost";
+		$user = "root";
+		$pass = ""; //If you set a password for the sql server, put it here, otherwise the xampp sql server should have no password for the root user by default, so it would be blank
+		$db = "mysql"; //Name of the database that the created tables are inserted into, seems like there is already a database named "mysql" in xampp by defualt, you can check http://localhost/phpmyadmin/
+		@ $link = mysqli_connect($host, $user, $pass, $db); //returns false if failed
+		if (!$link){
+			echo "Could not connect to server</br>";
+			trigger_error(mysqli_connect_error(), E_USER_ERROR);
+		} 
+		else{
+			$query4 = "DROP TABLE PurchasedSpaces";
+			mysqli_query($link,$query4);
+			$query2 = "SELECT * FROM PurchasedSpacesFinal"; // gets everything in the table and returns it as a mysqli_result object if SELECT, SHOW, DESCRIBE or EXPLAIN is used, there may be more cases than these where it returns a mysqli_result object.
+			$results = mysqli_query($link,$query2); // results is the mysqli_result object
+			if(!$results){
+				echo "<script>
+					  var parkingspaces = document.getElementsByTagName(\"td\");
+					 for(var x = 0; x <= parkingspaces.length-1; x++){
+					  var decide = Math.random()*10;
+					  if(decide <= 5){
+						parkingspaces[x].style.backgroundColor = \"lightgreen\";
+			          }
+					  else{
+						parkingspaces[x].innerHTML = parkingspaces[x].innerText;
+						parkingspaces[x].style.backgroundColor = \"lightgrey\";
+					  }
+					}
+					</script>";
 			}
 			else{
-				parkingspaces[x].innerHTML = "";
-				parkingspaces[x].style.backgroundColor = "lightgrey";
+				echo "<script>
+						  var parkingspaces = document.getElementsByTagName(\"td\");
+						 for(var x = 0; x <= parkingspaces.length-1; x++){
+						  var decide = Math.random()*10;
+						  if(decide <= 5){
+							parkingspaces[x].style.backgroundColor = \"lightgreen\";
+						  }
+						  else{
+							parkingspaces[x].innerHTML = parkingspaces[x].innerText;
+							parkingspaces[x].style.backgroundColor = \"lightgrey\";
+						  }
+						}
+					  </script>";
+				for($x = 1; $x <= mysqli_num_rows($results); $x++){
+					$row = mysqli_fetch_row($results);
+					echo "<script>
+							var parkingspaces = document.getElementsByTagName(\"td\");
+							for(var x = 0; x <= parkingspaces.length-1; x++){
+								if(parkingspaces[x].innerText == " . "\"" . $row[0] . "\"" . "){
+									parkingspaces[x].innerHTML = parkingspaces[x].innerText;
+									parkingspaces[x].style.backgroundColor = \"lightblue\";
+								}
+							}
+						  </script>";
+				}
 			}
 		}
-		</script>
+		mysqli_close($link); // closes connection
+		?>		
 	</body>
 </html>

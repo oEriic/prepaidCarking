@@ -9,7 +9,6 @@
 			trigger_error(mysqli_connect_error(), E_USER_ERROR);
 		} 
 		else{
-			echo "Connection established</br>";
 			$query = "CREATE TABLE PurchasedSpaces(
 			SpaceName VARCHAR(50) PRIMARY KEY,
 			SpaceHours INTEGER,
@@ -17,13 +16,6 @@
 			)
 			"; //You can check http://localhost/phpmyadmin/ to see if tables are created, nums is column 1, names is column 2
 			$succeed = mysqli_query($link,$query); //returns false if failed
-			if(!$succeed){
-				echo "not created</br>";// won't create another table if one with this name is already there, I think 
-			}
-			else{
-				echo "table created</br>";
-			}
-			
 			$test = $_POST;
 			$timeask = "";
 			$name = "a";
@@ -37,7 +29,6 @@
 			}
 			$timeask .= "<input type = \"submit\" value = \"CONFIRM RENTAL TIME\"/> "; 
 		}
-		echo mysqli_get_server_info($link) . "\n"; // returns server infor
 		mysqli_close($link); // closes connection
 		?>
 <html lang = "en">
@@ -51,6 +42,9 @@
 			<form action = "PrePaidParkingFinalSubmit.php" method = "POST">
 				<?= $timeask ?>
 			</form>
+		</div>
+		<div>
+			<a href = "PrePaidParking.php">Back to parking space selection screen</a>
 		</div>
 	</body>
 <html>
