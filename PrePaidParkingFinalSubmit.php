@@ -8,7 +8,15 @@
 			echo "Could not connect to server</br>";
 			trigger_error(mysqli_connect_error(), E_USER_ERROR);
 		} 
-		else{			
+		else{
+			function wronginput(){
+				echo "
+					    <h2>Plese enter a number greater than or equal to one for the number of rental hours. (No spaces)</h2>
+						<a href = \"PrePaidParking.php\">Back to parking space selction screen</a>";
+			}
+			
+			set_error_handler("wronginput");
+			
 			$test = $_POST;
 			$query = "CREATE TABLE PurchasedSpacesFinal(
 			SpaceName VARCHAR(50) PRIMARY KEY,
@@ -21,8 +29,18 @@
 			$results = mysqli_query($link,$query2); // restults is the mysqli_result object
 			$cost = 0;
 			$totalcost = 0;
+			$wronginputcheck = 0;
 			$confmsg = "";
 			$totalmsg = "";
+			
+			foreach($test as $test2){
+				if($test2 == "" || str_contains($test2," ") || preg_match('/[0-9]+/', $test2) == 0 || $test2 < 1){
+						trigger_error(E_USER_ERROR);
+						mysqli_close($link);
+						die();
+					}
+			}
+			
 			foreach($test as $test2){
 				$row = mysqli_fetch_row($results);
 				

@@ -1,0 +1,52 @@
+
+main{
+	text-align: center;
+	width: 80%;	
+	display: flex;
+	margin: auto;
+}
+
+#left{
+	flex-basis: 50%;
+}
+
+#right{
+	flex-basis: 50%;
+}
+
+img{
+	float: center;
+	width: 100%;
+}
+
+aside{
+	text-align: left;
+	padding: 2em;
+	margin: 2em;
+	border-width: 4px;
+	border-style: dashed;
+	border-color: blue;
+}
+
+#navigation{
+	width: 10%;
+	display: flex;
+	position: absolute;
+	top: 1%;
+	right: 1%;
+}
+
+.col{
+	flex: 50%;
+ 	padding: 5px;
+}
+
+table{
+	width:50%;
+}
+
+td{
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
