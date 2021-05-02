@@ -57,7 +57,7 @@
 		<?= $confmsg ?>
 		<?= $totalmsg ?>
 		<div>
-			<a href = "PrepaidParking.php">Back to parking space selction screen</a>
+			<a href = "PrepaidParking.php">Back to parking space selection screen</a>
 		</div>
 		</br>
 		<div>
