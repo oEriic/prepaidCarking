@@ -1,141 +1,143 @@
 <!DOCTYPE html>
-<style>
-    div#memory_board {
-        background: #CCC;
-        border: #999 1px solid;
-        width: 800px;
-        height: 540px;
-        padding: 24px;
-        margin: 0px auto;
-    }
 
-    div#memory_board>div {
-        background: url(tile_bg.jpg) no-repeat;
-        border: #000 1px solid;
-        width: 71px;
-        height: 71px;
-        float: left;
-        margin: 10px;
-        padding: 20px;
-        font-size: 64px;
-        cursor: pointer;
-        text-align: center;
-    }
-
-    div {
-        width: 100px;
-        height: 100px;
-        background: red;
-        position: relative;
-        -webkit-animation: mymove 120s;
-        -webkit-animation-play-state: paused;
-        animation: mymove 120s;
-        animation-play-state: paused;
-    }
-
-
-    @-webkit-keyframes mymove {
-        from {
-            left: 0px;
-        }
-
-        to {
-            left: 100px;
-        }
-    }
-
-    @keyframes mymove {
-        from {
-            left: 0px;
-        }
-
-        to {
-            left: 100px;
-        }
-    }
-</style>
 <html>
 
+<head>
+    <title>Rent-A-Car</title>
+    <link rel="stylesheet" href="rental.css">
+    <script src="rentalScript.js"></script>
+</head>
+
 <body>
+    <div class = "navBar">
+        <ul>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="PrePaidParking.php">PrePaid Parking</a></li>
+            <li><a href="login.php">Log In</a></li>
+        </ul>
+    </div>
+    </br>
+    </br>
+    </br>
+    <!--Slide show provided by W3Schools -->
+    <!-- Container for the image gallery -->
+    <div class="container">
 
-    <p>Memory game</p>
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+            <div class="numbertext">1 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/audiCar.jpg"  style="width:600px; height:500px">
+            </a>
+        </div>
 
-    <button id="myBtn1">play</button>
+        <div class="mySlides">
+            <div class="numbertext">2 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/bigmoneySUV.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
 
-    <p id="demo"></p>
+        <div class="mySlides">
+            <div class="numbertext">3 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/bigVan.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
 
-    <script>
-        document.getElementById("myBtn1").addEventListener("click", displayInfo);
+        <div class="mySlides">
+            <div class="numbertext">4 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/hondaCivic.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">5 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/jeep.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">6 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/limo.png" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">7 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/moneyCar.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">8 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/pattyWagon.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">9 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/smartCar.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">10 / 10</div>
+            <a href = "index.html">
+            <img class="center" src="carPics/toyotaVan.jpg" style="width:600px; height:500px">
+            </a>
+        </div>
 
 
-        function displayInfo() {
-            document.getElementById("demo").innerHTML = "welcome to memory game \n you will have to choose and match the pictures accordingly to win the game \n click on the pictures";
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-        }
-        var memory_array = ['1', '1', '2', '2', '3', '3', '4', '4', '5', '5', '6', '6', '7', '7', '8', '8', '9', '9', '10', '10', '11', '11', '12', '12'];
-        var memory_values = [];
-        var memory_tile_ids = [];
-        var tiles_flipped = 0;
-        Array.prototype.memory_tile_shuffle = function () {
-            var i = this.length, j, temp;
-            while (--i > 0) {
-                j = Math.floor(Math.random() * (i + 1));
-                temp = this[j];
-                this[j] = this[i];
-                this[i] = temp;
-            }
-        }
-        function newBoard() {
-            tiles_flipped = 0;
-            var output = '';
-            memory_array.memory_tile_shuffle();
-            for (var i = 0; i < memory_array.length; i++) {
-                output += '<div id="tile_' + i + '" onclick="memoryFlipTile(this,\'' + memory_array[i] + '\')"></div>';
-            }
-            document.getElementById('memory_board').innerHTML = output;
-        }
-        function memoryFlipTile(tile, val) {
-            if (tile.innerHTML == "" && memory_values.length < 2) {
-                tile.style.background = '#FFF';
-                tile.innerHTML = val;
-                if (memory_values.length == 0) {
-                    memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
-                } else if (memory_values.length == 1) {
-                    memory_values.push(val);
-                    memory_tile_ids.push(tile.id);
-                    if (memory_values[0] == memory_values[1]) {
-                        tiles_flipped += 2;
-                        // Clear both arrays
-                        memory_values = [];
-                        memory_tile_ids = [];
-                        // Check to see if the whole board is cleared
-                        if (tiles_flipped == memory_array.length) {
-                            alert("Board cleared... generating new board");
-                            document.getElementById('memory_board').innerHTML = "";
-                            newBoard();
-                        }
-                    } else {
-                        function flip2Back() {
-                            // Flip the 2 tiles back over
-                            var tile_1 = document.getElementById(memory_tile_ids[0]);
-                            var tile_2 = document.getElementById(memory_tile_ids[1]);
-                            tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
-                            tile_1.innerHTML = "";
-                            tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
-                            tile_2.innerHTML = "";
-                            // Clear both arrays
-                            memory_values = [];
-                            memory_tile_ids = [];
-                        }
-                        setTimeout(flip2Back, 700);
-                    }
-                }
-            }
-        }
-    </script>
-    <div id="memory_board"></div>
-    <script>newBoard();</script>
+        <!-- Image text -->
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail images -->
+        <div class="row">
+            <div class="column">
+                <img src="carPics/audiCar.jpg" style="width:50%" onclick="currentSlide(1)" alt="Iron Man?">
+            </div>
+            <div class="column">
+                <img src="carPics/bigmoneySUV.jpg" style="width:50%" onclick="currentSlide(2)" alt="looks Clean">
+            </div>
+            <div class="column">
+                <img src="carPics/bigVan.jpg" style="width:50%" onclick="currentSlide(3)" alt="Free Candy">
+            </div>
+            <div class="column">
+                <img src="carPics/hondaCivic.jpg" style="width:50%" onclick="currentSlide(4)" alt="New One is Cool">
+            </div>
+            <div class="column">
+                <img  src="carPics/jeep.jpg" style="width:50%" onclick="currentSlide(5)" alt="Jeep Beep">
+            </div>
+            <div class="column">
+                <img src="carPics/limo.png" style="width:50%" onclick="currentSlide(6)" alt="Prom Night">
+            </div>
+            <div class="column">
+                <img src="carPics/moneyCar.jpg" style="width:50%" onclick="currentSlide(7)" alt="A baller's car">
+            </div>
+            <div class="column">
+                <img src="carPics/pattyWagon.jpg" style="width:50%" onclick="currentSlide(8)" alt="For the REAL Squares">
+            </div>
+            <div class="column">
+                <img src="carPics/smartCar.jpg" style="width:50%" onclick="currentSlide(9)" alt="Small Vroomer">
+            </div>
+            <div class="column">
+                <img src="carPics/toyotaVan.jpg" style="width:50%" onclick="currentSlide(10)" alt="soccer Van">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
