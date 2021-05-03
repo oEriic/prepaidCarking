@@ -51,7 +51,9 @@
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                 </select>
-                <input type="text" id="CardNumber" maxlength="24" size="24" style="margin-left: 10px;"> <button id="mybutton" type="button" onclick="testCreditCard();" style="margin-left: 10px; color: #f00;">Check</button>
+                <input type="text" id="CardNumber" maxlength="24" size="24" style="margin-left: 10px;"> 
+                <button id="mybutton" type="button" onclick="testCreditCard();" style="margin-left: 10px; color: #f00;">
+                Check</button>
             </fieldset>
     </div>
 

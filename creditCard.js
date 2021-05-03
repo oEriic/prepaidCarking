@@ -5,18 +5,18 @@ function testCreditCard () {
     if (checkCreditCard (myCardNo,myCardType)) {
       alert ("Credit card has a valid format")
     } 
-    else {alert (ccErrors[ccErrorNo])};
+    else {alert ( errorCode[codeNum])};
   }
 
-var ccErrorNo = 0;
-var ccErrors = new Array ()
+var codeNum = 0;
+var  errorCode = new Array ()
 
-ccErrors [0] = "Unknown card type";
-ccErrors [1] = "No card number provided";
-ccErrors [2] = "Credit card number is in invalid format";
-ccErrors [3] = "Credit card number is invalid";
-ccErrors [4] = "Credit card number has an inappropriate number of digits";
-ccErrors [5] = "Warning! This credit card number is associated with a scam attempt";
+ errorCode [0] = "Unknown card type";
+ errorCode [1] = "No card number provided";
+ errorCode [2] = "Credit card number is in invalid format";
+ errorCode [3] = "Credit card number is invalid";
+ errorCode [4] = "Credit card number has an inappropriate number of digits";
+ errorCode [5] = "Warning! This credit card number is associated with a scam attempt";
 
 function checkCreditCard (cardnumber, cardname) {
      
@@ -53,13 +53,13 @@ function checkCreditCard (cardnumber, cardname) {
   
   // If card type not found, report an error
   if (cardType == -1) {
-     ccErrorNo = 0;
+     codeNum = 0;
      return false; 
   }
    
   // Ensure that the user has provided a credit card number
   if (cardnumber.length == 0)  {
-     ccErrorNo = 1;
+     codeNum = 1;
      return false; 
   }
     
@@ -70,7 +70,7 @@ function checkCreditCard (cardnumber, cardname) {
   var cardNo = cardnumber
   var cardexp = /^[0-9]{13,19}$/;
   if (!cardexp.exec(cardNo))  {
-     ccErrorNo = 2;
+     codeNum = 2;
      return false; 
   }
        
@@ -103,14 +103,14 @@ function checkCreditCard (cardnumber, cardname) {
     // All done - if checksum is divisible by 10, it is a valid modulus 10.
     // If not, report an error.
     if (checksum % 10 != 0)  {
-     ccErrorNo = 3;
+     codeNum = 3;
      return false; 
     }
   }  
   
   // Check it's not a spam number
   if (cardNo == '5490997771092064') { 
-    ccErrorNo = 5;
+    codeNum = 5;
     return false; 
   }
 
@@ -134,7 +134,7 @@ function checkCreditCard (cardnumber, cardname) {
       
   // If it isn't a valid prefix there's no point at looking at the length
   if (!PrefixValid) {
-     ccErrorNo = 3;
+     codeNum = 3;
      return false; 
   }
     
@@ -147,7 +147,7 @@ function checkCreditCard (cardnumber, cardname) {
   // See if all is OK by seeing if the length was valid. We only check the length if all else was 
   // hunky dory.
   if (!LengthValid) {
-     ccErrorNo = 4;
+     codeNum = 4;
      return false; 
   };   
   
