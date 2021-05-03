@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <html>
 
 <head>
@@ -12,9 +15,10 @@
     <div class="mainContainer">
         <!--PHPDBCOnnect Stuff-->
         <?php
-            $mysqli = new mysqli("localhost", "root", "1111", "cardb");
+            $mysqli = new mysqli("localhost", "root", "", "cardb");
             $id = $_REQUEST['carID'];
-
+            $_SESSION['ID']=$id;
+           
             $query = "SELECT * FROM cardb.carlist WHERE idCar=$id";
             if($carInfo = $mysqli -> query($query)){
                 while($row = $carInfo->fetch_assoc()){
@@ -38,14 +42,17 @@
                         </div>
                     </div>";
                 }
+
                 $carInfo->free();
                 
             }
             
         ?>
         <button onclick="checkout()">Rent Me!</button>
+
     </div>
 
 </body>
 
 </html>
+
