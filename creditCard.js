@@ -1,3 +1,4 @@
+//Citation: https://www.braemoor.co.uk/software/creditcard.shtml
 function testCreditCard () {
     var myCardNo = document.getElementById('CardNumber').value;
     var myCardType = document.getElementById('CardType').value;

@@ -3,7 +3,7 @@ session_start();
 
 ?>
 <html>
-
+<!--Citation: https://www.braemoor.co.uk/software/creditcard.shtml-->
 <head>
     <title>Car Detail</title>
     <link rel="stylesheet" href="carDetail.css">
@@ -15,7 +15,7 @@ session_start();
     <div class="mainContainer">
         <!--PHPDBCOnnect Stuff-->
         <?php
-            $mysqli = new mysqli("localhost", "root", "", "cardb");
+            $mysqli = new mysqli("localhost", "root", "1111", "cardb");
             $id = $_REQUEST['carID'];
             $_SESSION['ID']=$id;
            
