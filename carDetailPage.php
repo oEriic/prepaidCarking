@@ -3,7 +3,6 @@ session_start();
 
 ?>
 <html>
-<!--Citation: https://www.braemoor.co.uk/software/creditcard.shtml-->
 <head>
     <title>Car Detail</title>
     <link rel="stylesheet" href="carDetail.css">
