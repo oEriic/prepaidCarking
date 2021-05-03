@@ -17,7 +17,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
     		<a href="user.php"><img src="user.png"></a>
     	</div>
     	<div class=col>
-    		<a href="#cart.php"><img src="cart.jpg"></a>
+    		<a href="cart.php"><img src="cart.jpg"></a>
     	</div>
 	</div>
    	<main>
