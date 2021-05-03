@@ -5,18 +5,18 @@
 
 /* form styles */
 fieldset {
-	background-color: grey;
-	border: 2px outset gray;
-	border-radius: 10px;
+    background-color: grey;
+    border: 2px outset gray;
+    border-radius: 10px;
     margin: auto;
     width: 35%;
     padding: 10px;
 }
 legend {
     text-align: center;
-	background-color: pink;
-	border: 2px outset gray;
-	margin: auto;
+    background-color: pink;
+    border: 2px outset gray;
+    margin: auto;
     width: 30%;
     padding: 10px;
 }
@@ -25,8 +25,8 @@ fieldset strong,
 ul strong,
 fieldset label.left,
 fieldset .column {
-	float: left;
-	width: 11em;
+    float: left;
+    width: 11em;
 }
 h1{
     text-align: center;

@@ -3,6 +3,7 @@ function checkout() {
     if(rentConfirm){
         window.alert("Adding to cart!");
 
-        window.location.href="homepage.php";
+        window.location.href="cart.php";
     }
+    
 }

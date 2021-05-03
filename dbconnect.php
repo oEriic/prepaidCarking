@@ -2,8 +2,8 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "0000";
-$db = "demo";
+$pass = "";
+$db = "mysql";
 
 $r = mysqli_connect($host, $user, $pass, $db);
 

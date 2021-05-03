@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="cc.css">
     <script src="creditCard.js"></script>
 </head>
-
 <body>
     
     <div class="cardInfo">
@@ -44,7 +43,6 @@
                     <option>2023</option>
                     <option>2024</option>
                 </select>
-
                 <select tabindex="11" id="CardType" style="margin-left: 10px;">
                     <option value="AmEx">American Express</option>
                     <option value="Discover">Discover</option>
@@ -55,7 +53,5 @@
                 <button type="button" onclick="window.location.href='user.php'" style="margin-right: 10px; color: #f00;">Pay</button>
             </fieldset>
     </div>
-
 </body>
-
 </html>
