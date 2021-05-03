@@ -26,71 +26,71 @@
         <!-- Full-width images with number text -->
         <div class="mySlides">
             <div class="numbertext">1 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/audiCar.jpg"  style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=5" onclick="post">
+                <img class="center" src="carPics/audiCar.jpg" alt="Audi" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">2 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/bigmoneySUV.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=6" onclick="post">
+                <img class="center" src="carPics/bigmoneySUV.jpg" alt="Best SUV" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">3 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/bigVan.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=7" onclick="post">
+                <img class="center" src="carPics/bigVan.jpg" alt="Candy Van" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">4 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/hondaCivic.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=3" onclick="post">
+                <img class="center" src="carPics/hondaCivic.jpg" alt="Classic" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">5 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/jeep.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=8" onclick="post">
+                <img class="center" src="carPics/jeep.jpg" alt="BeepJeep" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">6 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/limo.png" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=10" onclick="post">
+                <img class="center" src="carPics/limo.png" alt="limooooo" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">7 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/moneyCar.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=4" onclick="post">
+                <img class="center" src="carPics/moneyCar.jpg" alt="lightning" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">8 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/pattyWagon.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=1" onclick="post">
+                <img class="center" src="carPics/pattyWagon.jpg" alt="Man's Car" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">9 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/smartCar.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=2" onclick="post">
+                <img class="center" src="carPics/smartCar.jpg" alt="smollVroomer" style="width:600px; height:500px">
             </a>
         </div>
 
         <div class="mySlides">
             <div class="numbertext">10 / 10</div>
-            <a href = "index.html">
-            <img class="center" src="carPics/toyotaVan.jpg" style="width:600px; height:500px">
+            <a href = "carDetailPage.php?carID=9" onclick="post">
+                <img class="center" src="carPics/toyotaVan.jpg" alt="noice" style="width:600px; height:500px">
             </a>
         </div>
 
