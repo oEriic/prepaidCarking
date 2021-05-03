@@ -9,11 +9,11 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
 <html lang = "en">
 <head>
 	<meta charset = "UTF-8"/>
-	<title>Shopping Cart</title>
+	<title>User Profile</title>
 	<link rel="stylesheet" href="project4.css">
 </head>
 <body>
-	<h1><?php echo $_SESSION['Name']; ?>'s Cart</h1>
+	<h1><?php echo $_SESSION['Name']; ?>'s History</h1>
 
 <?php
 }else{
@@ -21,6 +21,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
      exit();
 }
 ?>
+
 
 <?php
 	echo "<h3>Pre-Paid Parking</h3>";
@@ -49,6 +50,9 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
 			echo "Empty Cart";
 		}
 		echo "</table>";
+		echo "<br>";
+		echo "Total: $".$totalcost1 . "<br>";
+
 
 	}
 
@@ -57,7 +61,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
 ?>
 
 <?php
-	echo "<br>";
 	echo "<br><h3>Rental Car</h3>";
 	$host = "localhost";
 	$user = "root";
@@ -92,6 +95,8 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
            	echo "Empty Cart";
          }
 
+        echo "<br><br>Total: $".$totalcost2 . "<br>";
+
 	}
 
 
@@ -120,7 +125,6 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
 
 <br>
 			
-<h4><a href = "creditcard.php">Checkout</a></h4>
 <br>
 <a href = "homepage.php">Back to homepage</a>
 </body>
