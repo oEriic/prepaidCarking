@@ -13,52 +13,35 @@
         <!--PHPDBCOnnect Stuff-->
         <?php
             $mysqli = new mysqli("localhost", "root", "1111", "cardb");
-            $id = $_GET['carID'];
+            $id = $_REQUEST['carID'];
 
-            $query = "SELECT * FROM 'cardb.carlist' WHERE 'id'=$id";
-            
-            
-            echo '<table border="0" cellspacing="2" cellpadding="2"> 
-            <tr> 
-                <td> <font face="Arial">Value1</font> </td> 
-                <td> <font face="Arial">Value2</font> </td> 
-                <td> <font face="Arial">Value3</font> </td> 
-                <td> <font face="Arial">Value4</font> </td> 
-                <td> <font face="Arial">Value5</font> </td> 
-            </tr>';
+            $query = "SELECT * FROM cardb.carlist WHERE idCar=$id";
             if($carInfo = $mysqli -> query($query)){
                 while($row = $carInfo->fetch_assoc()){
-                    $field1name = $row["col1"];
-                    $field2name = $row["col2"];
-                    $field3name = $row["col3"];
-                    $field4name = $row["col4"];
-                    $field5name = $row["col5"];
-                    echo '<tr>
-                            <td>'.$field1name.'</td>
-                            <td>'.$field2name.'</td>
-                            <td>'.$field3name.'</td>
-                            <td>'.$field4name.'</td>
-                            <td>'.$field5name.'</td>
-                        </tr>';
+                    $field1name = $row["model"];
+                    $field2name = $row["carType"];
+                    $field3name = $row["carImg"];
+                    $field4name = $row["cost"];
+                    
+                    echo "<img class=\"carPic\" src=\"".$field3name."\" style=\"width:600px; height:500px\">";
+                    echo "
+                    <div class=\"statBox\">
+                        <h2>NAMEOFCARHERE</h2>
+                        <div>
+                            <h3>Model</h3>
+                            <p>".$field1name."</p>
+                            <h3>Price: </h3>
+                            <p>".$field4name."</p>
+                            <h3>Type:</h3>
+                            <p>".$field2name."</p>
+                        </div>
+                    </div>";
                 }
-                $retsult->free();
+                $carInfo->free();
                 
             }
             
-            //echo "<img class=\"carPic\" src=\"carPics/pattyWagon.jpg\" style=\"width:600px; height:500px\">"
         ?>
-        <img class="carPic" src="carPics/pattyWagon.jpg" style="width:600px; height:500px">
-        <div class="statBox">
-            <h2>NAMEOFCARHERE</h2>
-            <div>
-                <h3>Model</h3>
-                <p>Model of Car</p>
-                <h3>Price: </h3>
-                <p>PRICE</p>
-                <h3>Type:</h3>
-                <p>SUVSPORTETC</p>
-            </div>
-        </div>
     </div>
 </body>
 
