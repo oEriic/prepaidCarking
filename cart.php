@@ -120,7 +120,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
 
 <br>
 			
-<h4><a href = "creditcard.php">Checkout</a></h4>
+<h4><a href = "creditCard.php">Checkout</a></h4>
 <br>
 <a href = "homepage.php">Back to homepage</a>
 </body>
