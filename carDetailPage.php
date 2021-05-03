@@ -4,7 +4,6 @@
 <head>
     <title>Car Detail</title>
     <link rel="stylesheet" href="carDetail.css">
-    <script src="detailScript.js"></script>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
                             <h3>Model</h3>
                             <p>".$field1name."</p>
                             <h3>Price: </h3>
-                            <p>".$field4name."</p>
+                            <p>$".$field4name." Per Day</p>
                             <h3>Type:</h3>
                             <p>".$field2name."</p>
                         </div>
