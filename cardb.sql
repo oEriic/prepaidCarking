@@ -39,7 +39,7 @@ CREATE TABLE `carlist` (
 
 LOCK TABLES `carlist` WRITE;
 /*!40000 ALTER TABLE `carlist` DISABLE KEYS */;
-INSERT INTO `carlist` VALUES (1,'Burger','Compact','carPics/pattyWagon.jpg',5000.00,'Patty Wagon'),(2,'Smart','Compact','carPics/smartCar.jpg',1.00,'Smart Car 2049'),(3,'Honda','Compact','carPics/hondaCivic.jpg',60.00,'Civic Honda'),(4,'Hotwheel','Sport','carPics/moneyCar.jpg',9999.00,'Max Speed M.92'),(5,'Audi','Sport','carPics/audiCar.jpg',2.00,'Audi R99'),(6,'Flat','SUV','carPics/bigmoneySUV.jpg',7000.00,'2D ForeRunner'),(7,'Candy','SUV','carPics/bigVan.jpg',400.00,'Contract Worker'),(8,'Jeep','SUV','carPics/jeep.jpg',600.00,'Wrangler'),(9,'Toyota','SUV','carPics/toyotaVan.jpg',30.00,'Soccer Van'),(10,'Limo','SUV','carPics/limo.jpg',50.00,'Prom Night');
+INSERT INTO `carlist` VALUES (1,'Burger','Compact','carPics/pattyWagon.jpg',5000.00,'Patty Wagon'),(2,'Smart','Compact','carPics/smartCar.jpg',1.00,'Smart Car 2049'),(3,'Honda','Compact','carPics/hondaCivic.jpg',60.00,'Civic Honda'),(4,'Hotwheel','Sport','carPics/moneyCar.jpg',9999.00,'Max Speed M.92'),(5,'Audi','Sport','carPics/audiCar.jpg',2.00,'Audi R99'),(6,'Flat','SUV','carPics/bigmoneySUV.jpg',7000.00,'2D ForeRunner'),(7,'Candy','SUV','carPics/bigVan.jpg',400.00,'Contract Worker'),(8,'Jeep','SUV','carPics/jeep.jpg',600.00,'Wrangler'),(9,'Toyota','SUV','carPics/toyotaVan.jpg',30.00,'Soccer Van'),(10,'Limo','SUV','carPics/limo.png',50.00,'Prom Night');
 /*!40000 ALTER TABLE `carlist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-02 22:18:20
+-- Dump completed on 2021-05-02 22:26:55

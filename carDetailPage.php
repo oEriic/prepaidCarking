@@ -4,6 +4,7 @@
 <head>
     <title>Car Detail</title>
     <link rel="stylesheet" href="carDetail.css">
+    <script src="detail.js"></script>
 </head>
 
 <body>
@@ -42,9 +43,9 @@
             }
             
         ?>
+        <button onclick="checkout()">Rent Me!</button>
     </div>
 
-    <
 </body>
 
 </html>
