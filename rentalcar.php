@@ -12,8 +12,8 @@
     <div class = "navBar">
         <ul>
             <li><a href="index.html">Index</a></li>
+            <li><a href="homepage.php">Homepage</a></li>
             <li><a href="PrePaidParking.php">PrePaid Parking</a></li>
-            <li><a href="login.php">Log In</a></li>
         </ul>
     </div>
     </br>
