@@ -26,7 +26,7 @@ if (isset($_SESSION['ID']) && isset($_SESSION['Username'])) {
     		PrePaid Parking
  		</aside>
     	<aside id=right>
-    	 	<a href="#car_rental.php"><img src="carrent.jpg"></a>
+    	 	<a href="rentalcar.php"><img src="carrent.jpg"></a>
     	 	Car Rental
 		</aside>
 	</main>
