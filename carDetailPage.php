@@ -21,11 +21,12 @@
                     $field2name = $row["carType"];
                     $field3name = $row["carImg"];
                     $field4name = $row["cost"];
+                    $field5name = $row["name"];
                     
                     echo "<img class=\"carPic\" src=\"".$field3name."\" style=\"width:600px; height:500px\">";
                     echo "
                     <div class=\"statBox\">
-                        <h2>NAMEOFCARHERE</h2>
+                        <h2>".$field5name."</h2>
                         <div>
                             <h3>Model</h3>
                             <p>".$field1name."</p>
