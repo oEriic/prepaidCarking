@@ -51,9 +51,14 @@
                     <option value="MasterCard">MasterCard</option>
                     <option value="Visa">Visa</option>
                 </select>
+<<<<<<< HEAD
                 <input type="text" id="CardNumber" maxlength="24" size="24" style="margin-left: 10px;"> 
                 <button id="mybutton" type="button" onclick="testCreditCard();" style="margin-left: 10px; color: #f00;">
                 Check</button>
+=======
+                <input type="text" id="CardNumber" maxlength="24" size="24" style="margin-left: 10px;"> <button id="mybutton" type="button" onclick="testCreditCard();" style="margin-left: 10px; color: #f00;">Check</button>
+                <button type="button" onclick="window.location.href='user.php'" style="margin-right: 10px; color: #f00;">Pay</button>
+>>>>>>> 32fcfb7854241c5661c4a46f894c403031d822d7
             </fieldset>
     </div>
 
